@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html  lang="en">
 <head>
     
     <!-- Latest compiled and minified CSS -->
@@ -12,8 +12,13 @@
         Movimiento Clientes 
     </title>
     
+       <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+         <script type="text/javascript" src="datos.js"></script>
+
+
 </head>
-<body>
+<body >
     
     <div>
         <h1>Movimiento Clientes</h1>
@@ -47,11 +52,11 @@
         
         <div class="form-group form-group-lg">
             
-            <a href="#" class="btn btn-primary btn-lg active" role="button">Crear movimiento</a>
+            <a  href="#" class="btn btn-primary btn-lg active" role="button">Crear movimiento</a>
         </div>
         
         
-        <div class="form-group form-group-lg"class="form-group form-group-lg">
+        <div ng-app="movimiento", ng-controller = "Controller" class="form-group form-group-lg"class="form-group form-group-lg">
 
            <table style="width:50%" class="table table-bordered" >
                 <tr>
@@ -61,10 +66,10 @@
                     <th>Fecha Registro</th>
                     <th>Accion</th>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td> 
-                    <td></td>
+                <tr ng-repeat ="dato in datos">
+                    <td >{{dato.desc_mov}}</td>
+                    <td> {{dato.tipo_mov}}</td> 
+                    <td>{{dato.valor_mov}}</td>
                     <th></th>
                     <th><a href="#" class="btn btn-primary btn-lg active" role="button">Eliminar</a></th>
                 </tr>
